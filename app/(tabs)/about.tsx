@@ -5,7 +5,7 @@ import { Screen } from '@/components/Screen';
 import { Button, Card, SectionTitle } from '@/components/ui';
 import { fontSize, radius, spacing, useTheme } from '@/constants/theme';
 
-const PRIVACY_URL = 'https://elwessdev.github.io/rate-calculator-privacy';
+const PRIVACY_URL = 'https://elwessdev.github.io/PriceMyHour/privacy-policy.html';
 
 export default function AboutScreen() {
   const { colors } = useTheme();
