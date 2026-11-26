@@ -45,32 +45,28 @@ export default function PresetsScreen() {
           </Card>
         }
         renderItem={({ item }) => (
-          <Pressable
-            onPress={() => load(item)}
-            accessibilityRole="button"
-            accessibilityLabel={`Load preset ${item.name}, ${formatMoney(item.hourlyRate, item.currency)} per hour`}
-            style={({ pressed }) => [
-              styles.row,
-              {
-                backgroundColor: pressed ? colors.primarySoft : colors.card,
-                borderColor: colors.cardBorder,
-              },
-            ]}
-          >
-            <View style={styles.rowMain}>
-              <Text style={[styles.name, { color: colors.text }]} numberOfLines={1}>
-                {item.name}
-              </Text>
-              <Text style={[styles.date, { color: colors.textSubtle }]}>Saved {formatDate(item.createdAt)}</Text>
-            </View>
-            <View style={styles.rowSide}>
+          <View style={[styles.row, { backgroundColor: colors.card, borderColor: colors.cardBorder }]}>
+            <Pressable
+              onPress={() => load(item)}
+              accessibilityRole="button"
+              accessibilityLabel={`Load preset ${item.name}, ${formatMoney(item.hourlyRate, item.currency)} per hour`}
+              style={({ pressed }) => [styles.rowMain, { backgroundColor: pressed ? colors.primarySoft : 'transparent' }]}
+            >
+              <View style={styles.rowText}>
+                <Text style={[styles.name, { color: colors.text }]} numberOfLines={1}>
+                  {item.name}
+                </Text>
+                <Text style={[styles.date, { color: colors.textSubtle }]}>Saved {formatDate(item.createdAt)}</Text>
+              </View>
               <Text style={[styles.rate, { color: colors.primary }]} numberOfLines={1}>
                 {formatMoney(item.hourlyRate, item.currency)}
                 <Text style={[styles.rateUnit, { color: colors.textSubtle }]}>/h</Text>
               </Text>
+            </Pressable>
+            <View style={styles.rowSide}>
               <Button label="Delete" variant="danger" compact onPress={() => confirmDelete(item)} />
             </View>
-          </Pressable>
+          </View>
         )}
       />
     </Screen>
@@ -87,15 +83,22 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderWidth: StyleSheet.hairlineWidth,
     borderRadius: radius.lg,
-    padding: spacing.lg,
-    gap: spacing.md,
+    overflow: 'hidden',
   },
   rowMain: {
     flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: spacing.md,
+    paddingVertical: spacing.lg,
+    paddingLeft: spacing.lg,
+    paddingRight: spacing.sm,
+  },
+  rowText: {
+    flex: 1,
   },
   rowSide: {
-    alignItems: 'flex-end',
-    gap: spacing.sm,
+    paddingRight: spacing.lg,
   },
   name: {
     fontSize: fontSize.md,
