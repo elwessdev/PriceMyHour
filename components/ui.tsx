@@ -201,3 +201,12 @@ const styles = StyleSheet.create({
     marginVertical: spacing.sm,
   },
 });
+
+/**
+ * Shrinks a large headline font so long amounts (e.g. "1,597,677.45 DT")
+ * still fit on narrow phones without being truncated.
+ */
+export function fitFontSize(text: string, maxSize: number, fitsChars: number, minSize = 22): number {
+  if (text.length <= fitsChars) return maxSize;
+  return Math.max(minSize, Math.floor((maxSize * fitsChars) / text.length));
+}

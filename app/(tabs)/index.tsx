@@ -6,7 +6,7 @@ import { BreakdownBar } from '@/components/BreakdownBar';
 import { NumberField } from '@/components/NumberField';
 import { SavePresetModal } from '@/components/SavePresetModal';
 import { Screen } from '@/components/Screen';
-import { Button, Card, Chip, ChipRow, Divider, SectionTitle, StatRow } from '@/components/ui';
+import { Button, Card, Chip, ChipRow, Divider, fitFontSize, SectionTitle, StatRow } from '@/components/ui';
 import { fontSize, radius, spacing, useTheme } from '@/constants/theme';
 import type { RateField } from '@/lib/calc';
 import { CURRENCIES, currencyFor, formatMoney, formatNumber, parseNumber } from '@/lib/format';
@@ -26,6 +26,7 @@ export default function CalculatorScreen() {
   const result = outcome.ok ? outcome.result : null;
   const { symbol } = currencyFor(currency);
   const money = (n: number) => formatMoney(n, currency);
+  const heroText = result ? money(result.hourlyRate) : '—';
 
   const field = (key: RateField) => ({
     value: form[key],
@@ -48,12 +49,15 @@ export default function CalculatorScreen() {
           Minimum hourly rate
         </Text>
         <Text
-          style={[styles.heroValue, { color: result ? colors.onPrimary : colors.textMuted }]}
+          style={[
+            styles.heroValue,
+            { color: result ? colors.onPrimary : colors.textMuted, fontSize: fitFontSize(heroText, fontSize.hero, 10) },
+          ]}
           numberOfLines={1}
           adjustsFontSizeToFit
           accessibilityLiveRegion="polite"
         >
-          {result ? money(result.hourlyRate) : '—'}
+          {heroText}
         </Text>
         <Text style={[styles.heroSub, { color: result ? colors.onPrimary : colors.textMuted }]}>
           {result

@@ -6,7 +6,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { useAppState } from '@/components/AppStateProvider';
 import { NumberField } from '@/components/NumberField';
 import { Screen } from '@/components/Screen';
-import { Button, Card, Divider, SectionTitle, StatRow } from '@/components/ui';
+import { Button, Card, Divider, fitFontSize, SectionTitle, StatRow } from '@/components/ui';
 import { fontSize, radius, spacing, useTheme } from '@/constants/theme';
 import { estimateProject } from '@/lib/calc';
 import { formatMoney, formatNumber, parseNumber } from '@/lib/format';
@@ -64,7 +64,11 @@ export default function EstimatorScreen() {
       <Card style={{ backgroundColor: colors.primarySoft, borderColor: colors.primarySoft }}>
         <Text style={[styles.rateLabel, { color: colors.textMuted }]}>Your current hourly rate</Text>
         {outcome.ok ? (
-          <Text style={[styles.rateValue, { color: colors.text }]} numberOfLines={1} adjustsFontSizeToFit>
+          <Text
+            style={[styles.rateValue, { color: colors.text, fontSize: fitFontSize(money(hourlyRate), fontSize.xxl, 14) }]}
+            numberOfLines={1}
+            adjustsFontSizeToFit
+          >
             {money(hourlyRate)}
             <Text style={[styles.rateUnit, { color: colors.textMuted }]}> /h</Text>
           </Text>
@@ -115,7 +119,14 @@ export default function EstimatorScreen() {
 
           <View style={[styles.suggested, { backgroundColor: colors.primary }]}>
             <Text style={[styles.suggestedLabel, { color: colors.onPrimary }]}>Suggested fixed price</Text>
-            <Text style={[styles.suggestedValue, { color: colors.onPrimary }]} numberOfLines={1} adjustsFontSizeToFit>
+            <Text
+              style={[
+                styles.suggestedValue,
+                { color: colors.onPrimary, fontSize: fitFontSize(money(result.suggestedPrice), 36, 12) },
+              ]}
+              numberOfLines={1}
+              adjustsFontSizeToFit
+            >
               {money(result.suggestedPrice)}
             </Text>
             <Text style={[styles.suggestedSub, { color: colors.onPrimary }]}>
