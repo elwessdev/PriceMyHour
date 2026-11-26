@@ -2,7 +2,7 @@
 
 ## App name (max 30)
 
-Freelance Rate Calculator
+RateWise: Freelance Rate Calc
 
 ## Short description (max 80)
 
@@ -10,7 +10,7 @@ Find the hourly rate you need after platform fees, taxes and expenses. Offline.
 
 ## Full description
 
-Stop guessing what to charge. Freelance Rate Calculator works out the minimum hourly rate you need to hit your income goal after platform fees, taxes and business expenses, then turns it into a project price you can quote with confidence.
+Stop guessing what to charge. RateWise works out the minimum hourly rate you need to hit your income goal after platform fees, taxes and business expenses, then turns it into a project price you can quote with confidence.
 
 Enter what you want to take home each month, how much you really work and what it costs you to run your business. The app does the math instantly and shows exactly where every dollar goes, so you never underprice a job again.
 
@@ -35,6 +35,6 @@ PRIVATE BY DESIGN
 • No permissions requested
 • Works 100% offline: all your data stays on your device
 
-Whether you are a designer, developer, writer, consultant or virtual assistant, Freelance Rate Calculator helps you set rates that cover your costs and pay you what you are worth.
+Whether you are a designer, developer, writer, consultant or virtual assistant, RateWise helps you set rates that cover your costs and pay you what you are worth.
 
 Estimates only. Not financial or tax advice.

@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "Freelance Rate Calculator",
+    "name": "RateWise",
     "slug": "freelance-rate-calculator",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "scheme": "ratecalculator",
+    "scheme": "ratewise",
     "userInterfaceStyle": "automatic",
     "plugins": [
       "expo-router",
@@ -27,7 +27,7 @@
       "typedRoutes": true
     },
     "android": {
-      "package": "com.elwessdev.ratecalculator",
+      "package": "com.elwessdev.ratewise",
       "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",

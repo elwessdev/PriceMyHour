@@ -1,11 +1,11 @@
 <p align="center">
-  <img src="assets/icon.png" alt="Freelance Rate Calculator icon" width="96" height="96">
+  <img src="assets/icon.png" alt="RateWise icon" width="96" height="96">
 </p>
 
-<h1 align="center">Freelance Rate Calculator</h1>
+<h1 align="center">RateWise</h1>
 
 <p align="center">
-  Find the hourly rate you actually need after platform fees, taxes and expenses.<br>
+  <strong>Freelance rate calculator.</strong> Find the hourly rate you actually need after platform fees, taxes and expenses.<br>
   A private, offline Android app built with Expo and React Native.
 </p>
 
@@ -21,7 +21,7 @@
 
 ## Why
 
-Many freelancers set their rate by guessing, then lose a large share of it to platform fees, taxes, tools and unpaid admin time. Freelance Rate Calculator starts from the income you want to take home and works backwards to the **minimum hourly rate** you need to charge.
+Many freelancers set their rate by guessing, then lose a large share of it to platform fees, taxes, tools and unpaid admin time. RateWise starts from the income you want to take home and works backwards to the **minimum hourly rate** you need to charge.
 
 ## Features
 
