@@ -1,10 +1,12 @@
 import { Tabs } from 'expo-router';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
 import { TabIcon } from '@/components/TabIcon';
 import { useTheme } from '@/constants/theme';
 
 export default function TabsLayout() {
   const { colors } = useTheme();
+  const insets = useSafeAreaInsets();
   return (
     <Tabs
       screenOptions={{
@@ -12,8 +14,13 @@ export default function TabsLayout() {
         tabBarHideOnKeyboard: true,
         tabBarActiveTintColor: colors.primary,
         tabBarInactiveTintColor: colors.textSubtle,
-        tabBarStyle: { backgroundColor: colors.tabBar, borderTopColor: colors.cardBorder },
-        tabBarLabelStyle: { fontSize: 12, fontWeight: '600' },
+        // Taller than the default 49pt so the boxed icons leave room for a full-height label.
+        tabBarStyle: {
+          backgroundColor: colors.tabBar,
+          borderTopColor: colors.cardBorder,
+          height: 58 + insets.bottom,
+        },
+        tabBarLabelStyle: { fontSize: 12, lineHeight: 16, fontWeight: '600' },
       }}
     >
       <Tabs.Screen
