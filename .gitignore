@@ -17,3 +17,5 @@ npm-debug.*
 yarn-error.*
 .DS_Store
 coverage/
+credentials.json
+credentials/
