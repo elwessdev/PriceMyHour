@@ -14,6 +14,7 @@
   <img alt="React Native 0.88" src="https://img.shields.io/badge/React%20Native-0.88-61DAFB?logo=react&logoColor=black">
   <img alt="TypeScript strict" src="https://img.shields.io/badge/TypeScript-strict-3178C6?logo=typescript&logoColor=white">
   <img alt="Platform Android" src="https://img.shields.io/badge/platform-Android-16A34A?logo=android&logoColor=white">
+  <a href="LICENSE"><img alt="License MIT" src="https://img.shields.io/badge/license-MIT-blue"></a>
 </p>
 
 ---
@@ -138,6 +139,10 @@ npm run assets
 ## Contributing
 
 Bug reports and suggestions are welcome. Please [open an issue](https://github.com/elwessdev/PriceMyHour/issues). For pull requests, run `npm test` and `npm run typecheck` before submitting.
+
+## License
+
+Released under the [MIT License](LICENSE).
 
 ## Disclaimer
 
